@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""A module for testing the utils module.
+"""
+A module for testing the utils module.
 """
 import unittest
 from typing import Dict, Tuple, Union
@@ -14,7 +15,7 @@ from utils import (
 
 
 class TestAccessNestedMap(unittest.TestCase):
-    """Tests the `access_nested_map` function."""
+    """Tests `access_nested_map` function."""
     @parameterized.expand([
         ({"a": 1}, ("a",), 1),
         ({"a": {"b": 2}}, ("a",), {"b": 2}),
@@ -26,7 +27,7 @@ class TestAccessNestedMap(unittest.TestCase):
             path: Tuple[str],
             expected: Union[Dict, int],
             ) -> None:
-        """Tests `access_nested_map`'s output."""
+        """Tests `access_nested_map` output."""
         self.assertEqual(access_nested_map(nested_map, path), expected)
 
     @parameterized.expand([
@@ -45,7 +46,7 @@ class TestAccessNestedMap(unittest.TestCase):
 
 
 class TestGetJson(unittest.TestCase):
-    """Tests the `get_json` function."""
+    """Tests `get_json` function."""
     @parameterized.expand([
         ("http://example.com", {"payload": True}),
         ("http://holberton.io", {"payload": False}),
@@ -63,7 +64,7 @@ class TestGetJson(unittest.TestCase):
 
 
 class TestMemoize(unittest.TestCase):
-    """Tests the `memoize` function."""
+    """Tests `memoize` function."""
     def test_memoize(self) -> None:
         """Tests `memoize`'s output."""
         class TestClass:
